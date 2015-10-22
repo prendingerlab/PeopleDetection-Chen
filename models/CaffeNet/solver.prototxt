@@ -11,5 +11,5 @@ weight_decay: 0.0005
 # function
 snapshot: 0
 # We still use the snapshot prefix, though
-snapshot_prefix: "caffenet_fast_rcnn"
+snapshot_prefix: "DroneCaffeNet_fast_rcnn"
 #debug_info: true

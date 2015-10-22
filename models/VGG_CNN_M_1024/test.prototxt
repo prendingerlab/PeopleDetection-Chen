@@ -260,10 +260,10 @@ layer {
   }
 }
 layer {
-  name: "cls_score"
+  name: "cls_score_drone"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "cls_score"
+  top: "cls_score_drone"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -273,7 +273,7 @@ layer {
     decay_mult: 0
   }
   inner_product_param {
-    num_output: 21
+    num_output: 2
     weight_filler {
       type: "gaussian"
       std: 0.01
@@ -285,10 +285,10 @@ layer {
   }
 }
 layer {
-  name: "bbox_pred"
+  name: "bbox_pred_drone"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "bbox_pred"
+  top: "bbox_pred_drone"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -298,7 +298,7 @@ layer {
     decay_mult: 0
   }
   inner_product_param {
-    num_output: 84
+    num_output: 8
     weight_filler {
       type: "gaussian"
       std: 0.001
@@ -312,6 +312,6 @@ layer {
 layer {
   name: "cls_prob"
   type: "Softmax"
-  bottom: "cls_score"
+  bottom: "cls_score_drone"
   top: "cls_prob"
 }

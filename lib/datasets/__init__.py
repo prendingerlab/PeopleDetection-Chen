@@ -7,6 +7,7 @@
 
 from .imdb import imdb
 from .pascal_voc import pascal_voc
+from .inria import inria
 from . import factory
 
 import os.path as osp
